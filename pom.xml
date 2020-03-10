@@ -4,12 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>moor-common</groupId>
+    <groupId>io.github.moor-soft</groupId>
     <artifactId>moor-common</artifactId>
     <version>1.1.5</version>
     <packaging>jar</packaging>
     <name>moor-common</name>
     <description>Moor Common Project</description>
+    <url>https://github.com/moor-soft/moorcommon</url>
+
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -45,6 +47,17 @@
 
 
     </dependencies>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
 
     <build>
         <finalName>moor-common</finalName>
