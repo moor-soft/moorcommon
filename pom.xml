@@ -4,7 +4,7 @@
 
     <groupId>io.github.moor-soft</groupId>
     <artifactId>moor-common</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <name>moor-common</name>
     <description>Moor Common Project</description>
     <url>https://github.com/moor-soft/moorcommon</url>
