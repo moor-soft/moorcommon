@@ -75,19 +75,22 @@ public class EmailSMSThread implements Runnable {
 
         HttpEntity<EmailSMSData> httpEntity = new HttpEntity<>(emailSMSData, requestHeaders);
         try {
-            ResponseEntity<ResultObject> result = restTemplate.exchange(
+            ResponseEntity<Object> result = restTemplate.exchange(
                     sendEmailURI,
                     HttpMethod.POST,
-                    httpEntity, ResultObject.class
+                    httpEntity, Object.class
             );
+            /*
             if (result != null
                     && result.getBody() != null
                     && result.getBody().isSuccessful()) {
-                HashMap<String, Object> data = (HashMap<String, Object>) result.getBody().getData();
+                HashMap<String, Object> data = (HashMap<String, Object>) result.getBody();
                 System.out.println("E-posta gönderildi");
             } else {
                 System.out.println("E-posta gönderilirken hata oluştu => Subject : " + emailSMSData.getSubject() + " //// Body : " + emailSMSData.getBody());
             }
+
+             */
         } catch (Exception e) {
             System.out.println("E-posta gönderilirken hata oluştu => To : " + emailSMSData.getTo().toString() + " //// Body : " + emailSMSData.getBody() + " //// Error : " + e.getMessage());
         }
@@ -107,12 +110,13 @@ public class EmailSMSThread implements Runnable {
 
         HttpEntity<EmailSMSData> httpEntity = new HttpEntity<>(emailSMSData, requestHeaders);
         try {
-            ResponseEntity<ResultObject> result = restTemplate.exchange(
+            ResponseEntity<Object> result = restTemplate.exchange(
                     sendSMSURI,
                     HttpMethod.POST,
                     httpEntity,
-                    ResultObject.class
+                    Object.class
             );
+            /*
             if (result != null
                     && result.getBody() != null
                     && result.getBody().isSuccessful()) {
@@ -121,6 +125,8 @@ public class EmailSMSThread implements Runnable {
             } else {
                 System.out.println("SMS gönderilirken hata oluştu => To : " + emailSMSData.getTo().toString() + " //// Body : " + emailSMSData.getBody());
             }
+
+             */
         } catch (Exception e) {
             System.out.println("SMS gönderilirken hata oluştu => To : " + emailSMSData.getTo().toString() + " //// Body : " + emailSMSData.getBody() + " //// Error : " + e.getMessage());
         }
