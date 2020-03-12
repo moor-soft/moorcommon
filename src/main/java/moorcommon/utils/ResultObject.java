@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
 import org.springframework.http.HttpStatus;
 
 import java.util.List;
@@ -12,9 +11,8 @@ import java.util.List;
 @AllArgsConstructor(staticName = "of")
 public class ResultObject<T> {
 
-    @Getter(onMethod = @__(@JsonIgnore))
     private Result result;
-    @Getter(onMethod = @__(@JsonProperty("result")))
+    @JsonProperty("result")
     private T data;
 
     @JsonCreator

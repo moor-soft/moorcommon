@@ -47,9 +47,7 @@ public abstract class Result {
         return failure(httpStatus).with(message);
     }
 
-    /**
-     * @return Messages in an unmodifiable set.
-     */
+
     public List<String> getMessages() {
         return Collections.unmodifiableList(messages);
     }
