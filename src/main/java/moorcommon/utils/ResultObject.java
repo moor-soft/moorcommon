@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
 import org.springframework.http.HttpStatus;
 
 import java.util.List;
@@ -13,6 +15,7 @@ public class ResultObject<T> {
 
     private Result result;
     @JsonProperty("result")
+    @Getter
     private T data;
 
     @JsonCreator
@@ -82,5 +85,13 @@ public class ResultObject<T> {
 
     public <R> ResultObject<R> with(R object) {
         return new ResultObject<>(result, object);
+    }
+
+    public T getData() {
+        return data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
     }
 }
